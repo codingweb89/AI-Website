@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="chat.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Website</title>
+</head>
+<body>
+    
+
+    <div class="header">
+        <div class="logo">
+            <img src="logo.png" alt="chatbot">
+            <span>AI</span>
+        </div>
+
+        <div class="lists">
+            <span id="openSideBar">&#x2630;</span>
+        </div>
+    </div>
+
+
+    <div class="description">
+        <h1>With ChatBot, automating customer service is a breeze.</h1>
+        <p>All all in-one platform to build and launch conversational chatbot without coding.</p>
+        <div class="email">
+        <input type="email" placeholder="Enter your business email">
+        <button>Sign up free</button>
+        </div>
+        <div class="trials">
+            <div class="first14_days">
+                <p>Free 14-days trial</p>
+            </div>
+            <div class="no_credit_div">
+                <p>No credit card required</p>
+            </div>
+        </div>
+    </div>
+
+<div class="aside">
+    <div class="overlay_aside"></div>
+    <div class="sidebar">
+        <div class="exit"><span id="closeSideBar">&times;</span></div>
+        <div class="side_lists">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Features</a></li>
+                <li><a href="">Short Codes</a></li>
+                <li><a href="">Error Page</a></li>
+                <li><a href="">Documentation</a></li>
+            </ul>
+        </div>
+        <div class="search">
+            <input type="search" placeholder="Search this website">
+        </div>
+        <div class="login_sign_up">
+            <button class="login">Login</button>
+            <button class="signup">Sign up</button>
+        </div>
+    </div>
+</div>
+
+<div class="chat_options">
+    <div class="message_ai">
+        <span id="exitIcon">&#10005;</span>
+        <div class="ai_message">
+            <p>🙌 Welcome back! How may I help you today?. 🤖</p>
+        </div>
+    </div>
+    <div class="ai_image">
+        <img src="logo.png" alt="">
+    </div>
+</div>
+
+<!-- <div class="ai_chat_options">
+    <div class="message_ai_option">
+        <div class="exit_icon_ai">
+            <span id="exitIcon">&#10005;</span>
+        </div>
+
+        <div class="text_ai_message">
+            <p>🙌 Welcome back! How may I help you today?. 🤖</p>
+        </div>
+    </div>
+    <div class="ai_chat_icon">
+        <div class="chat_icon_div_container">
+            <img id="chatai" src="images/chatbot (1).png" alt="caht ai">
+        </div>
+    </div>
+</div> -->
+
+<script>
+    
+
+    const span = document.createElement("span");
+    span.innerHTML = "&#10004;";
+
+    let trialDivs = document.querySelector(".trials")
+    let trialDivsDivs = trialDivs.querySelectorAll("div");
+    trialDivsDivs.forEach(div => {
+        div.setAttribute("data-good", span.innerHTML);
+    })
+
+    const aside = document.querySelector(".aside");
+
+    document.getElementById("openSideBar").addEventListener("click", e => {
+        aside.style.display = "block";
+    })
+
+    document.getElementById("closeSideBar").addEventListener("click", e => {
+        aside.style.display = "none";
+    })
+
+    setTimeout(() => {
+        console.log("Hello World Mother Fucker!!")
+        document.querySelector(".message_ai").classList.add("add");
+    }, 5000)
+
+</script>
+
+
+</body>
+</html>

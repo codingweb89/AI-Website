@@ -1,0 +1,323 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    background: linear-gradient(180deg, purple, blue);
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    width: 100%;
+    color: #fff;
+    background: #333;
+    width: 95%;
+    padding: 10px 20px;
+    margin: 0 auto;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    top: 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.logo img {
+    width: 40px;
+}
+
+.logo span {
+    font-size: 33px;
+    font-weight: lighter;
+    font-family: cursive;
+}
+
+.lists {
+    cursor: pointer;
+    font-size: 23px;
+    color: #fff;
+}
+
+.description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.description > h1 {
+    color: #fff;
+    font-size: 50px;
+    max-width: 70%;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.description > p {
+    line-height: 30px;
+    max-width: 500px;
+    width: 100%;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.email {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.email input {
+    /* flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 400px; */
+    width: 500px;
+    border: none;
+    padding: 20px;
+    border-radius: 1px;
+}
+
+.email input::placeholder {
+    font-size: 17px;
+}
+
+.email button {
+    /* flex-basis: 400px;
+    flex-grow: 1; */
+    padding: 20px;
+    color: #fff;
+    border: none;
+    background: rgb(38, 0, 255);
+    border-radius: 1px;
+    cursor: pointer;
+}
+
+.trials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    color: #fff;
+}
+
+.trials > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.trials > div::before {
+    content: attr(data-good);
+    margin-right: 10px;
+}
+
+.overlay_aside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.8);
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    background-color: #151515;
+    padding: 20px;
+    max-width: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    transition: transform 444ms ease;
+    overflow-y: scroll;
+    z-index: 1;
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+.exit {
+    position: absolute;
+    top: 20px;
+    color: #fff;
+}
+
+.exit span {
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.side_lists ul {
+    list-style: none;
+}
+
+.side_lists ul li {
+    border-bottom: 1px solid grey;
+    margin: 30px 0;
+    text-align: left;
+}
+
+.side_lists ul li a {
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.search {
+    margin-bottom: 30px;
+}
+
+.search input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+}
+
+.login_sign_up {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+}
+
+.login_sign_up button {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login_sign_up button.login {
+    background: transparent;
+    border: 1px solid rgb(255, 255, 255);
+    color: #fff;
+}
+
+.login_sign_up button.signup {
+    background: rgb(38, 0, 255);
+    color: #ffff;
+}
+
+.aside {
+    display: none;
+}
+
+.chat_options {
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+    text-align: right;
+    /* margin-right: 20px; */
+}
+
+.message_ai {
+    width: 300px;
+    position: relative;
+    text-align: left;
+    transform: translateX(-200px);
+    opacity: 0;
+    transition: transform 1s linear;
+}
+
+.message_ai.add {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+#exitIcon {
+    position: absolute;
+    top: -25px;
+    right: 0;
+    color: #fff; 
+    cursor: pointer;
+}
+
+.ai_message {
+    padding: 10px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.ai_image img {
+    width: 50px;
+    margin-top: 10px;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .logo img {
+        width: 30px;
+    }
+    
+    .logo span {
+        font-size: 22px;
+    }
+
+    .lists {
+        font-size: 20px;
+    }
+
+    .description {
+        padding: 10px;
+    }
+
+    .description > h1 {
+        font-size: 25px;
+    }
+
+    .description > p {
+        font-size: 15px;
+    }
+
+    .email input {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .email input::placeholder {
+        font-size: 13px;
+    }
+
+    .email button {
+        flex-grow: 1;
+        padding: 15px;
+    }
+
+    .sidebar {
+        max-width: 400px;
+    }
+    
+    
+}
